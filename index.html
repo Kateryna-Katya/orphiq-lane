@@ -13,30 +13,38 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap"
     rel="stylesheet">
     <script type="module" crossorigin src="/orphiq-lane/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/orphiq-lane/assets/styles-qmlGMWJs.css">
+    <link rel="stylesheet" crossorigin href="/orphiq-lane/assets/styles-Djgn6Mcy.css">
   </head>
   <body>
-    <header class="header">
+    <div class="mobile-menu">
+  <nav class="mobile-nav">
+    <a href="#home" class="mobile-link">Главная</a>
+    <a href="#about" class="mobile-link">О платформе</a>
+    <a href="#features" class="mobile-link">Преимущества</a>
+    <a href="#innovations" class="mobile-link">Инновации</a>
+    <a href="#blog" class="mobile-link">Блог</a>
+    <a href="#contact" class="mobile-link btn">Начать сейчас</a>
+  </nav>
+</div>
+
+<header class="header">
   <div class="container header__container">
     <a href="/" class="logo">
       <span class="logo__icon"></span>
       <span class="logo__text">Orphiq<span>Lane</span></span>
     </a>
-
     <nav class="nav">
       <ul class="nav__list">
-        <li class="nav__item"><a href="#home" class="nav__link">Главная</a></li>
-        <li class="nav__item"><a href="#about" class="nav__link">О платформе</a></li>
-        <li class="nav__item"><a href="#features" class="nav__link">Преимущества</a></li>
-        <li class="nav__item"><a href="#innovations" class="nav__link">Инновации</a></li>
-        <li class="nav__item"><a href="#blog" class="nav__link">Блог</a></li>
+        <li><a href="#home" class="nav__link">Главная</a></li>
+        <li><a href="#about" class="nav__link">О платформе</a></li>
+        <li><a href="#features" class="nav__link">Преимущества</a></li>
+        <li><a href="#innovations" class="nav__link">Инновации</a></li>
+        <li><a href="#blog" class="nav__link">Блог</a></li>
       </ul>
     </nav>
-
     <a href="#contact" class="btn btn--header">Связаться</a>
-
-    <button class="burger" aria-label="Menu">
-      <span></span>
+    <button class="burger" id="burgerBtn">
+      <span></span><span></span><span></span>
     </button>
   </div>
 </header>
@@ -48,35 +56,146 @@
     <div class="container hero__container">
         <div class="hero__content">
             <div class="badge">Платформа года 2025</div>
-            <h1 class="hero__title">
-                Технологии нового поколения — теперь на <span>кончиках пальцев</span>
-            </h1>
-            <p class="hero__text">
-                Orphiq Lane — это пошаговый путь в мир передовой цифровой инфраструктуры. Мы объясняем инновации,
-                которые меняют правила игры, простым и понятным языком.
-            </p>
+            <h1 class="hero__title">Технологии нового поколения — на <span>кончиках пальцев</span></h1>
+            <p class="hero__text">Разбираем передовую цифровую инфраструктуру и решения, которые меняют правила игры.
+                Легко разобраться даже без опыта.</p>
             <div class="hero__actions">
-                <a href="#contact" class="btn btn--primary">Начать сейчас</a>
-                <a href="#about" class="btn btn--secondary">
-                    Узнать детали
-                    <i data-lucide="arrow-right"></i>
-                </a>
-            </div>
-            <div class="hero__stats">
-                <div class="stat-item">
-                    <span class="stat-num">15к+</span>
-                    <span class="stat-label">Студентов</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num">40+</span>
-                    <span class="stat-label">AI-инструментов</span>
-                </div>
+                <a href="#contact" class="btn btn--primary">Запросить доступ</a>
+                <a href="#about" class="btn btn--secondary">Узнать детали <i data-lucide="arrow-right"></i></a>
             </div>
         </div>
-
         <div class="hero__visual">
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.28/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/K6690TzE-V17G6A7/scene.splinecode"></spline-viewer>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Переосмыслите подход к развитию</h2>
+            <p class="section-subtitle">Orphiq Lane — это больше, чем обучение. Это ваша стратегия роста на базе
+                инноваций.</p>
+        </div>
+        <div class="about__grid">
+            <div class="about__card glass">
+                <i data-lucide="zap"></i>
+                <h3>Быстрый старт</h3>
+                <p>Подключение занимает 2 минуты. Начните внедрять практики, применимые уже сегодня.</p>
+            </div>
+            <div class="about__card glass">
+                <i data-lucide="shield-check"></i>
+                <h3>Проверенный партнер</h3>
+                <p>Методологии, доказавшие эффективность в странах ЕС и по всему миру.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="container">
+        <div class="features__main">
+            <div class="features__info">
+                <h2 class="section-title">Почему выбирают нас?</h2>
+                <ul class="features__list">
+                    <li><i data-lucide="check-circle"></i> AI-инструменты для реальных задач</li>
+                    <li><i data-lucide="check-circle"></i> Программа пассивного дохода</li>
+                    <li><i data-lucide="check-circle"></i> Пошаговый путь, понятный каждому</li>
+                    <li><i data-lucide="check-circle"></i> Экспертная поддержка на всех этапах</li>
+                </ul>
+            </div>
+            <div class="features__image glass">
+                <img src="img/placeholder.png" alt="Innovation">
+                <div class="floating-box">Доступно в Европе</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="innovations" id="innovations">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Технологии, которые работают на вас</h2>
+        </div>
+        <div class="innovations__grid">
+            <div class="inno-item">
+                <div class="inno-num">01</div>
+                <h4>Цифровая экосистема</h4>
+                <p>Воплотите мечты в реальность с помощью масштабируемых IT-решений.</p>
+            </div>
+            <div class="inno-item">
+                <div class="inno-num">02</div>
+                <h4>Смарт-аналитика</h4>
+                <p>Оцените перспективы проекта с помощью встроенных алгоритмов прогнозирования.</p>
+            </div>
+            <div class="inno-item">
+                <div class="inno-num">03</div>
+                <h4>Automation 2.0</h4>
+                <p>Расширьте горизонты проекта, автоматизируя рутинные процессы за считанные часы.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog" id="blog">
+    <div class="container">
+        <div class="section-header flex-header">
+            <h2 class="section-title">Образовательный блог</h2>
+            <a href="#" class="btn btn--secondary">Все статьи</a>
+        </div>
+        <div class="blog__grid">
+            <article class="blog-card">
+                <div class="blog-card__img"><img src="img/placeholder.png" alt="Post"></div>
+                <div class="blog-card__content">
+                    <span>Технологии • 5 мин</span>
+                    <h4>Как AI меняет рынок труда в 2025 году</h4>
+                    <p>Детали на сайте: разбираем кейсы автоматизации в Европе.</p>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-card__img"><img src="img/placeholder.png" alt="Post"></div>
+                <div class="blog-card__content">
+                    <span>Карьера • 8 мин</span>
+                    <h4>Постройте карьеру на базе новых технологий</h4>
+                    <p>Пошаговое руководство по адаптации к цифровой экономике.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact__wrapper glass">
+            <div class="contact__info">
+                <h2 class="section-title">Готовы начать?</h2>
+                <p>Бесплатная консультация по всем вопросам интеграции платформы.</p>
+                <div class="contact__meta">
+                    <p><strong>Email:</strong> support@orphiq-lane.blog</p>
+                    <p><strong>Адрес:</strong> London, Canada Square 25</p>
+                </div>
+            </div>
+            <form class="contact__form" id="mainForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phoneInput" placeholder="Телефон (только цифры)" required>
+                </div>
+                <div class="form-group captcha-box">
+                    <span id="captchaQuestion">5 + 2 = </span>
+                    <input type="number" id="captchaAnswer" placeholder="Ответ" required>
+                </div>
+                <label class="checkbox-label">
+                    <input type="checkbox" required> Согласен с политикой конфиденциальности
+                </label>
+                <button type="submit" class="btn btn--primary">Отправить запрос</button>
+                <div id="formSuccess" class="success-msg">Сообщение успешно отправлено!</div>
+            </form>
         </div>
     </div>
 </section>
@@ -141,10 +260,16 @@
     </div>
   </div>
 </footer>
+    <div class="cookie-popup" id="cookiePopup">
+      <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie политике</a>.
+      </p>
+      <button class="btn btn--primary btn--sm" id="acceptCookies">Принять</button>
+    </div>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
 
   </body>
 </html>

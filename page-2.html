@@ -5,30 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 2</title>
-    <link rel="stylesheet" crossorigin href="/orphiq-lane/assets/styles-qmlGMWJs.css">
+    <link rel="stylesheet" crossorigin href="/orphiq-lane/assets/styles-Djgn6Mcy.css">
   </head>
   <body>
-    <header class="header">
+    <div class="mobile-menu">
+  <nav class="mobile-nav">
+    <a href="#home" class="mobile-link">Главная</a>
+    <a href="#about" class="mobile-link">О платформе</a>
+    <a href="#features" class="mobile-link">Преимущества</a>
+    <a href="#innovations" class="mobile-link">Инновации</a>
+    <a href="#blog" class="mobile-link">Блог</a>
+    <a href="#contact" class="mobile-link btn">Начать сейчас</a>
+  </nav>
+</div>
+
+<header class="header">
   <div class="container header__container">
     <a href="/" class="logo">
       <span class="logo__icon"></span>
       <span class="logo__text">Orphiq<span>Lane</span></span>
     </a>
-
     <nav class="nav">
       <ul class="nav__list">
-        <li class="nav__item"><a href="#home" class="nav__link">Главная</a></li>
-        <li class="nav__item"><a href="#about" class="nav__link">О платформе</a></li>
-        <li class="nav__item"><a href="#features" class="nav__link">Преимущества</a></li>
-        <li class="nav__item"><a href="#innovations" class="nav__link">Инновации</a></li>
-        <li class="nav__item"><a href="#blog" class="nav__link">Блог</a></li>
+        <li><a href="#home" class="nav__link">Главная</a></li>
+        <li><a href="#about" class="nav__link">О платформе</a></li>
+        <li><a href="#features" class="nav__link">Преимущества</a></li>
+        <li><a href="#innovations" class="nav__link">Инновации</a></li>
+        <li><a href="#blog" class="nav__link">Блог</a></li>
       </ul>
     </nav>
-
     <a href="#contact" class="btn btn--header">Связаться</a>
-
-    <button class="burger" aria-label="Menu">
-      <span></span>
+    <button class="burger" id="burgerBtn">
+      <span></span><span></span><span></span>
     </button>
   </div>
 </header>
