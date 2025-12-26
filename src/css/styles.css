@@ -763,3 +763,270 @@ section {
       height: 220px;
   }
 }
+/* Дополнения для страницы Privacy */
+.pages h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin: 30px 0 15px;
+  color: var(--color-accent);
+}
+
+.pages .container p strong {
+  color: var(--color-text);
+}
+
+/* Стилизация выделенных блоков текста */
+.pages p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Плавный переход для всех ссылок в футере и на страницах */
+.pages__link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 0;
+  font-weight: 600;
+}
+/* Дополнительные стили для сложных списков в политике данных */
+.pages ul ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.pages ul ul li {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.pages ul ul li::before {
+  content: "•"; /* Маркер для вложенных списков */
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+
+/* Улучшение визуального веса заголовков внутри контента */
+.pages h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 40px;
+}
+
+/* Плавный переход для всех ссылок в тексте */
+.pages a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.pages a:hover {
+  text-decoration: underline;
+}
+/* Специальные стили для Дисклеймера */
+.disclaimer-content p {
+  background: rgba(0, 0, 0, 0.02); /* Легкая плашка для каждого параграфа */
+  padding: 20px 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  border-left: 2px solid rgba(255, 118, 117, 0.2);
+  transition: var(--transition);
+}
+
+.disclaimer-content p:hover {
+  background: rgba(255, 118, 117, 0.03);
+  border-left-color: var(--color-accent);
+}
+
+.disclaimer-content strong {
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 5px;
+  font-family: var(--font-heading);
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+}
+
+/* Фикс для кнопки в хедере на юридических страницах */
+.header--scrolled {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+/* Стили для юридических страниц (Privacy, Cookies, etc.) */
+.pages {
+  padding: 160px 0 100px; /* Отступ сверху под фиксированный хедер */
+  background-color: var(--color-bg);
+}
+
+.pages .container {
+  max-width: 900px;
+  background: #ffffff;
+  padding: 60px 80px;
+  border-radius: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(255, 118, 117, 0.1);
+}
+
+.pages__badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 118, 117, 0.1);
+  color: var(--color-accent);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.pages h1 {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.pages h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 45px 0 20px;
+  color: var(--color-text);
+  border-left: 4px solid var(--color-accent);
+  padding-left: 20px;
+}
+
+.pages p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.pages ul {
+  margin: 20px 0 30px 0;
+  padding-left: 0;
+}
+
+.pages li {
+  list-style: none;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.pages li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.pages__contact-box {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+.pages__link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.pages__link:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .pages { padding: 120px 0 60px; }
+  .pages .container { padding: 40px 25px; border-radius: 24px; }
+  .pages h1 { font-size: 2rem; }
+  .pages h2 { font-size: 1.3rem; }
+}
+/* Стили для нумерованных списков на страницах */
+.pages__ordered-list {
+  counter-reset: my-counter;
+  padding-left: 0;
+  margin: 30px 0;
+}
+
+.pages__ordered-list li {
+  counter-increment: my-counter;
+  list-style: none;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.pages__ordered-list li::before {
+  content: counter(my-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+/* Общие стили для контента юридических страниц */
+.pages h1 {
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.pages p strong {
+  color: var(--color-accent);
+}
+
+.pages ul {
+  margin: 1.5rem 0;
+}
+
+.pages li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pages li::before {
+  content: "•";
+  color: var(--color-accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Эффект для ссылок на почту */
+.pages__link {
+  display: inline-block;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 2px solid rgba(255, 118, 117, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+.pages__link:hover {
+  border-bottom-color: var(--color-accent);
+}
