@@ -346,7 +346,7 @@ section {
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
 }
 
@@ -589,4 +589,177 @@ section {
     .contact__wrapper {
         padding: 30px;
     }
+}
+/* Выравнивание чекбокса в одну строку */
+.checkbox-group {
+  margin-top: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center; /* Центрирует текст и чекбокс по вертикали */
+  gap: 12px;           /* Расстояние между чекбоксом и текстом */
+  font-size: 0.9rem;
+  line-height: 1.2;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;         /* Фиксированный размер */
+  height: 18px;
+  margin: 0;           /* Сброс стандартных отступов браузера */
+  flex-shrink: 0;      /* Запрещаем чекбоксу сжиматься, если текст длинный */
+  accent-color: var(--color-accent); /* Цвет галочки в тон сайта */
+  cursor: pointer;
+}
+
+.checkbox-label span a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+
+.checkbox-label span a:hover {
+  opacity: 0.7;
+}
+/* Стили для списка в секции About */
+.about__list {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.about__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.about__list li i {
+  width: 16px;
+  height: 16px;
+  color: var(--color-accent);
+  margin-bottom: 0 !important; /* Сброс отступа иконок из карточек */
+}
+
+/* Убедимся, что сетка карточек корректна */
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+/* --- SECTION BLOG --- */
+.blog {
+  padding: 100px 0;
+  background-color: var(--color-bg); /* Тот самый персиковый фон */
+}
+
+/* Шапка секции с кнопкой в ряд */
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.blog__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+  gap: 30px;
+}
+
+/* Карточка блога */
+.blog-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Контейнер изображения */
+.blog-card__img {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.blog-card:hover .blog-card__img img {
+  transform: scale(1.1); /* Эффект зума */
+}
+
+/* Контент карточки */
+.blog-card__content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Тег категории и время чтения */
+.blog-card__content span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-accent); /* Коралловый цвет */
+  display: block;
+}
+
+.blog-card__content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-card__content h4 {
+  color: var(--color-accent);
+}
+
+.blog-card__content p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-top: 5px;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .blog__grid {
+      grid-template-columns: 1fr; /* На планшетах и телефонах в одну колонку */
+  }
+
+  .flex-header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .blog-card__img {
+      height: 220px;
+  }
 }
