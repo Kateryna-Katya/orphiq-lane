@@ -1,58 +1,83 @@
-// Initialize Lucide icons
 lucide.createIcons();
 
-// Lenis Smooth Scroll
+// Smooth Scroll (Lenis)
 const lenis = new Lenis();
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
+function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
 
-// Header animation on scroll
-const header = document.querySelector('.header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.style.padding = '12px 0';
-        header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.05)';
-    } else {
-        header.style.padding = '20px 0';
-        header.style.boxShadow = 'none';
-    }
+// Mobile Menu Toggle
+const burger = document.getElementById('burgerBtn');
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+burger.onclick = () => {
+    mobileMenu.classList.toggle('active');
+    burger.classList.toggle('active');
+};
+
+mobileLinks.forEach(link => {
+    link.onclick = () => {
+        mobileMenu.classList.remove('active');
+    };
 });
 
-// Глобальная анимация появления элементов при скролле
+// Captcha Logic
+const captchaQ = document.getElementById('captchaQuestion');
+const num1 = Math.floor(Math.random() * 10);
+const num2 = Math.floor(Math.random() * 10);
+const correctAnswer = num1 + num2;
+if(captchaQ) captchaQ.innerText = `${num1} + ${num2} = `;
+
+// Form Validation & AJAX Simulation
+const form = document.getElementById('mainForm');
+const phoneInput = document.getElementById('phoneInput');
+
+phoneInput.oninput = (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+};
+
+form.onsubmit = (e) => {
+    e.preventDefault();
+    const userAnswer = document.getElementById('captchaAnswer').value;
+    
+    if(parseInt(userAnswer) !== correctAnswer) {
+        alert('Ошибка в капче. Попробуйте снова.');
+        return;
+    }
+
+    const btn = form.querySelector('button');
+    btn.innerText = 'Отправка...';
+    
+    setTimeout(() => {
+        form.reset();
+        document.getElementById('formSuccess').style.display = 'block';
+        btn.innerText = 'Отправить запрос';
+    }, 1500);
+};
+
+// Cookie Popup Logic
+if(!localStorage.getItem('cookiesAccepted')) {
+    const popup = document.getElementById('cookiePopup');
+    popup.style.display = 'flex';
+    document.getElementById('acceptCookies').onclick = () => {
+        localStorage.setItem('cookiesAccepted', 'true');
+        popup.style.display = 'none';
+    };
+}
+
+// GSAP Scroll Animations
 gsap.registerPlugin(ScrollTrigger);
 
-const footerCols = document.querySelectorAll('.footer__col');
-gsap.from(footerCols, {
-    scrollTrigger: {
-        trigger: ".footer",
-        start: "top 80%",
-    },
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: "power2.out"
-});
-// Анимация появления Hero-контента
-gsap.from(".hero__content > *", {
-    x: -50,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.15,
-    ease: "power3.out",
-    delay: 0.5
-});
-
-// Плавное парение для 3D блока (если Spline не загрузился сразу)
-gsap.from(".hero__visual", {
-    scale: 0.8,
-    opacity: 0,
-    duration: 1.5,
-    ease: "expo.out",
-    delay: 0.2
+gsap.utils.toArray('section').forEach(section => {
+    gsap.from(section.querySelectorAll('.section-title, .about__card, .inno-item, .blog-card'), {
+        scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out"
+    });
 });
