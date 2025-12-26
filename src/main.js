@@ -38,3 +38,21 @@ gsap.from(footerCols, {
     stagger: 0.2,
     ease: "power2.out"
 });
+// Анимация появления Hero-контента
+gsap.from(".hero__content > *", {
+    x: -50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.15,
+    ease: "power3.out",
+    delay: 0.5
+});
+
+// Плавное парение для 3D блока (если Spline не загрузился сразу)
+gsap.from(".hero__visual", {
+    scale: 0.8,
+    opacity: 0,
+    duration: 1.5,
+    ease: "expo.out",
+    delay: 0.2
+});
